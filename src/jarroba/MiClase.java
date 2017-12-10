@@ -2,11 +2,12 @@ package jarroba;
 
 public class MiClase {
 	
-	private String otraVariableString = "Otro textito";
 	public String unaVariableString = "Un Texto";
+	private String otraVariableString = "Otro textito";
+	public String terceraVariable = null;
 	long l = 359650L;
 	private int unaVariableInt = 5;
-	protected MiClase miClase = null;
+	public int varInt= 4;
 
 	public String getUnaVariableString(String concatenar) {
 		return unaVariableString + concatenar;
@@ -20,12 +21,12 @@ public class MiClase {
 		return l;
 	}
 
-	public MiClase(String unaVariableString, long l, int unaVariableInt, MiClase miClase) {
+	public MiClase(String unaVariableString, long l, int unaVariableInt) {
 		super();
 		this.unaVariableString = unaVariableString;
 		this.l = l;
 		this.unaVariableInt = unaVariableInt;
-		this.miClase = miClase;
+
 	}
 	
 	public MiClase() {}
@@ -38,14 +39,28 @@ public class MiClase {
 		this.l = l;
 	}
 
+	public void setOtraVariableString(String otraVariableString) {
+		this.otraVariableString = otraVariableString;
+	}
+
 	public void setUnaVariableInt(int unaVariableInt) {
 		this.unaVariableInt = unaVariableInt;
 	}
 
-	public void setMiClase(MiClase miClase) {
-		this.miClase = miClase;
+
+	public String getUnaVariableString() {
+		return unaVariableString;
 	}
 
-	
-	
+	public String getOtraVariableString() {
+		return otraVariableString;
+	}
+
+	public String getTerceraVariable() {
+		return terceraVariable;
+	}
+
+	public int getVarInt() {
+		return varInt;
+	}	
 }

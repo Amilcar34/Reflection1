@@ -25,12 +25,13 @@ public final class TestGet1 {
 		// cualificado (fully-quailified name); esto es, el nombre del paquete
 		// donde está nuestra clase, seguido del nombre de la clase
 		System.out.println("---->Rutra entre paquetes y tipo de template: ");
+		
 		try {
+
 			Class c = Class.forName("jarroba.MiClase");
 			System.out.println(c);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+
+		} catch (ClassNotFoundException e) {	e.printStackTrace();	}
 
 		// me devuelve la ruta entre paquetes
 		MiClase objetoDeMiClase = new MiClase();
@@ -44,10 +45,10 @@ public final class TestGet1 {
 		System.out.println();
 
 		try {
-			// Si queremos obtener una variable pública
 			System.out.println("            ====VARIABLES=====");
-			System.out.println("--->Obtener info de variables especificas");
+			System.out.println("\n--->Obtener info de variables especificas");
 
+			// Si queremos obtener una variable pública
 			Field variableString = objetoDeClassConInfoDeMiClase.getField("unaVariableString");
 			System.out.println(variableString);
 
@@ -61,13 +62,13 @@ public final class TestGet1 {
 
 		// Si queremos obtener un array con todas las variables públicas de
 		// nuestra clase
-		System.out.println("---> Obtener toda la info de varibles PUBLICAS que alla");
+		System.out.println("\n---> Obtener toda la info de varibles PUBLICAS que alla");
 		Field[] todasLasVariables = objetoDeClassConInfoDeMiClase.getFields();
 
 		for (Field field : todasLasVariables)
 			System.out.println(field);
 
-		System.out.println("---> Obtener toda la info de TODAS varible1s que alla");
+		System.out.println("\n---> Obtener toda la info de TODAS varible1s que alla");
 		// Si queremos obtener todas las variables, independientemente de si son
 		// privadas o no
 		Field[] todasLasVariablesDeclaradas = objetoDeClassConInfoDeMiClase.getDeclaredFields();
@@ -76,21 +77,13 @@ public final class TestGet1 {
 			// System.out.println(todasLasVariablesDeclaradas);
 		}
 
-		System.out.println("----> Obtener solo el nombre de las variales que alla");
+		System.out.println("\n----> Obtener solo el nombre de las variales que alla");
 		for (Field fi : todasLasVariablesDeclaradas)
 			System.out.println(fi.getName());
 
 		System.out.println();
-		System.out.println("---> Metodos, tipo de parametros y privacidad delcarados en la clase");
-		// Si queremos obtener todos los métodos, independientemente de si son
-		// privados o no
-		Method[] todosLosMetodosDeclarados = objetoDeClassConInfoDeMiClase.getDeclaredMethods();
-		for (Method m : todosLosMetodosDeclarados)
-			System.out.println(m);
-
-		System.out.println();
 		System.out.println("            ====METODOS=====");
-		System.out.println("--->Obtener info de metodos especificos");
+		System.out.println("\n--->Obtener info de metodos especificos");
 		try {
 
 			// Si queremos obtener un método público. Si tiene parámetros
@@ -109,8 +102,7 @@ public final class TestGet1 {
 			e.printStackTrace();
 		}
 
-		System.out.println();
-		System.out.println("---> Obtener toda la info de metodos PUBLICOS que alla");
+		System.out.println("\n---> Obtener toda la info de metodos PUBLICOS que alla");
 		// Si queremos obtener un array con todas las metodos públicas de
 		// nuestra clase
 		Method[] todosLosMetodos = objetoDeClassConInfoDeMiClase.getMethods();
@@ -118,28 +110,36 @@ public final class TestGet1 {
 			System.out.println(method);
 		System.out.println();
 
+		System.out.println();
+		System.out.println("\n---> Metodos, tipo de parametros y privacidad delcarados en la clase");
+		// Si queremos obtener todos los métodos, independientemente de si son
+		// privados o no
+		Method[] todosLosMetodosDeclarados = objetoDeClassConInfoDeMiClase.getDeclaredMethods();
+		for (Method m : todosLosMetodosDeclarados)
+			System.out.println(m);
+
 		final Method[] metodos = objetoDeClassConInfoDeMiClase.getDeclaredMethods();
 		for (final Method metodo : metodos) {
 			System.out.println("Nombre del MÉTODO: " + metodo.getName());
 			System.out.println("  Cantidad de parámetros: " + metodo.getParameterCount());
 		}
 
-		System.out.println();
-		System.out.println("---> Obtener todas las variables PUBLICAS en la clase");
+		System.out.println("\n---> Obtener todas las variables PUBLICAS en la clase");
 		Field[] todasVariablesDeclaradas = objetoDeClassConInfoDeMiClase.getDeclaredFields();
 		for (Field todasVariables : todasLasVariables)
 			System.out.println(todasVariables);
 
 		System.out.println();
 		System.out.println("            ====Constructores=====");
-		System.out.println("---> Obtener constructores de declarados en la clase");
+		System.out.println("\n---> Obtener constructores de declarados en la clase");
 
 		// Si queremos obtener un array con todos los constructores publicos de
 		// nuestra clase
 		Constructor[] todosLosConstructores = objetoDeClassConInfoDeMiClase.getConstructors();
 		for (Constructor c : todosLosConstructores)
 			System.out.println(c);
-		System.out.println("---> Obtener constructores disponibles");
+		
+		System.out.println("\n---> Obtener constructores disponibles");
 		// Si queremos obtener todos los métodos, independientemente de si son
 		// privados o no
 		Constructor[] constructoresDeClase = objetoDeClassConInfoDeMiClase.getDeclaredConstructors();
